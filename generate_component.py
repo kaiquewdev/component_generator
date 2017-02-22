@@ -84,49 +84,49 @@ class Script(object):
     def __str__(self):
         return '<script src="%s"/>' % (self.src)
 
-project_location = os.path.join(os.environ['HOME'],'war/component-example-standalone/')
-raw_component = '''
-{0}
-
-{1}
-
-{2}
-
-{3}
-
-{4}
-
-{5}
-
-{6}
-
-{7}
-
-{8}
-
-{9}
-{10}
-'''.format(
-    Link().__str__(),
-    Header().__str__(),
-    Paragraph(html='Modularized architecture').__str__(),
-    Hr().__str__(),
-    SubHeader().__str__(),
-    UnorderedList(html=''.join([
-        ListItem(Anchor("#","teste 1").__str__()).__str__(),
-        ListItem(Anchor(href="#",html="teste 2").__str__()).__str__(),
-        ListItem(Anchor(href="#",html="teste 3").__str__()).__str__(),
-    ])).__str__(),
-    Hr().__str__(),
-    InputField().__str__(),
-    Textarea().__str__(),
-    Hr().__str__(),
-    Script(src="./dist/component-example-standalone.js").__str__(),
-    Script(src="./dist/component-example-standalone-app.js").__str__(),
-)
-file_location = os.path.join(project_location,'component-example-standalone.html')
-file_component = open(file_location,'w')
-
 if __name__ == '__main__':
+    project_location = os.path.join(os.environ['HOME'],'war/component-example-standalone/')
+    raw_component = '''
+    {0}
+
+    {1}
+
+    {2}
+
+    {3}
+
+    {4}
+
+    {5}
+
+    {6}
+
+    {7}
+
+    {8}
+
+    {9}
+    {10}
+    '''.format(
+        Link().__str__(),
+        Header().__str__(),
+        Paragraph(html='Modularized architecture').__str__(),
+        Hr().__str__(),
+        SubHeader().__str__(),
+        UnorderedList(html=''.join([
+            ListItem(Anchor("#","teste 1").__str__()).__str__(),
+            ListItem(Anchor(href="#",html="teste 2").__str__()).__str__(),
+            ListItem(Anchor(href="#",html="teste 3").__str__()).__str__(),
+        ])).__str__(),
+        Hr().__str__(),
+        InputField().__str__(),
+        Textarea().__str__(),
+        Hr().__str__(),
+        Script(src="./dist/component-example-standalone.js").__str__(),
+        Script(src="./dist/component-example-standalone-app.js").__str__(),
+    )
+    file_location = os.path.join(project_location,'component-example-standalone.html')
+    file_component = open(file_location,'w')
+
     file_component.write(raw_component)
     file_component.close()
