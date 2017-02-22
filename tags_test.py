@@ -1,5 +1,6 @@
 '''Tags Test'''
 
+import os
 import tags
 import unittest
 
