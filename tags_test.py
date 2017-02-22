@@ -394,5 +394,7 @@ class IframeTest(unittest.TestCase):
     def test_iframe_html(self):
         self.assertEqual(self.iframe.html('Iframe content'),'<iframe src="sample.html">Iframe content</iframe>')
 
-if __name__ == '__main__':
+if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
+elif __name__ == '__main__':
+    unittest.main()
