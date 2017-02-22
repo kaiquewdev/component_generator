@@ -24,6 +24,16 @@ class HeaderTest(unittest.TestCase):
     def test_header_str(self):
         self.assertEqual(self.header.__str__(),'<h1>Component Example Standalone</h1>')
 
+class ParagraphTest(unittest.TestCase):
+    def setUp(self):
+        self.paragraph = generate_component.Paragraph()
+
+    def test_paragraph_instantiation(self):
+        self.assertEqual(self.paragraph.__class__,generate_component.Paragraph)
+
+    def test_paragraph_str(self):
+        self.assertEqual(self.paragraph.__str__(),'<p>Modularized architecture</p>')
+
 if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
 elif __name__ == '__main__':
