@@ -11,7 +11,7 @@ class LinkTest(unittest.TestCase):
     def test_link_str(self):
         self.assertEqual(self.link.__str__(),'<link rel="stylesheet" href="./css/component-example-standalone.css">')
 
-if __name__ == '__main__' and os.environ['DEBUG'] == 'true':
+if __name__ == '__main__' and 'DEBUG' in os.environ and os.environ['DEBUG'] == 'true':
     unittest.main(verbosity=2)
 elif __name__ == '__main__':
     unittest.main()
