@@ -2,3 +2,5 @@
 *pyc
 __pycache__/
 bazel-*
+dist/
+component_generator.egg-info*
